@@ -1,0 +1,14 @@
+
+/shelf/
+/workspace.xml
+/idea
+.gradle
+*.iml
+/build
+/captures
+.cxx
+/local.properties
+.DS_Store
+.externalNativeBuild
+
+
