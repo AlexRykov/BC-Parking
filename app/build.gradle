@@ -31,6 +31,9 @@ android {
         jvmTarget = '1.8'
     }
     namespace 'com.example.bc_parking'
+    buildFeatures{
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -43,4 +46,5 @@ dependencies {
     testImplementation 'junit:junit:'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
 }

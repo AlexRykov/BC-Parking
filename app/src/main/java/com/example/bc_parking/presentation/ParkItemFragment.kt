@@ -13,14 +13,17 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.bc_parking.R
+import com.example.bc_parking.databinding.FragmentParkItemBinding
 import com.example.bc_parking.domain.ParkItem
 import com.google.android.material.textfield.TextInputLayout
 
 class ParkItemFragment : Fragment() {
 
 
+    private lateinit var binding: FragmentParkItemBinding
     private lateinit var viewModel: ParkItemViewModel
     private lateinit var onEditingFinishedListener: OnEditingFinishedListener
+
 
     private lateinit var tilName: TextInputLayout
     private lateinit var tilFirm: TextInputLayout
@@ -55,15 +58,16 @@ class ParkItemFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return layoutInflater.inflate(R.layout.fragment_park_item, container, false)
+    ): View {
+        binding = FragmentParkItemBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel = ViewModelProvider(this)[ParkItemViewModel::class.java]
-        initViews(view)
+        initViews()
         addTextChangeListeners()
         launchRightMode()
         observeViewModel()
@@ -241,19 +245,19 @@ class ParkItemFragment : Fragment() {
         }
     }
 
-    private fun initViews(view: View) {
-        tilName = view.findViewById(R.id.til_name)
-        tilFirm = view.findViewById(R.id.til_firm)
-        tilCount = view.findViewById(R.id.til_count)
-        tilDateFrom = view.findViewById(R.id.til_dateFrom)
-        tilDateTo = view.findViewById(R.id.til_dateTo)
-        etName = view.findViewById(R.id.et_name)
-        etFirm = view.findViewById(R.id.et_firm)
-        etDateFrom = view.findViewById(R.id.et_dateFrom)
-        etDateTo = view.findViewById(R.id.et_dateTo)
-        etCount = view.findViewById(R.id.et_count)
-        buttonSave = view.findViewById(R.id.save_button)
-        buttonClear = view.findViewById(R.id.clear_button)
+    private fun initViews() {
+        tilName = binding.tilName
+        tilFirm = binding.tilFirm
+        tilCount = binding.tilCount
+        tilDateFrom = binding.tilDateFrom
+        tilDateTo = binding.tilDateTo
+        etName = binding.etName
+        etFirm = binding.etFirm
+        etDateFrom = binding.etDateFrom
+        etDateTo = binding.etDateTo
+        etCount = binding.etCount
+        buttonSave = binding.saveButton
+        buttonClear = binding.clearButton
     }
 
     interface OnEditingFinishedListener {

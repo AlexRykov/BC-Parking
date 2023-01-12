@@ -1,8 +1,11 @@
 package com.example.bc_parking.presentation
 
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.AttributeSet
+import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentContainerView
@@ -10,9 +13,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bc_parking.R
+import com.example.bc_parking.databinding.ActivityMainBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity(), ParkItemFragment.OnEditingFinishedListener {
+
+    private lateinit var binding: ActivityMainBinding
 
     private lateinit var viewModel: MainViewModel
     private lateinit var parkListAdapter: ParkListAdapter
@@ -36,6 +42,7 @@ class MainActivity : AppCompatActivity(), ParkItemFragment.OnEditingFinishedList
             } else launchFragment(ParkItemFragment.newInstanceAddItem())
         }
     }
+
 
     override fun onEditingFinished() {
         Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
