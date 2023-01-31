@@ -34,6 +34,12 @@
     <string name="count28">28</string>
     <string name="count29">29</string>
     <string name="count30">30</string>
+    <string name="outside_Park_1">Outside Park 1</string>
+    <string name="outside_Park_2">Outside Park 2</string>
+    <string name="parking_1st_Lvl">Parking 1st Lvl</string>
+    <string name="parking_2nd_Lvl">Parking 2nd Lvl</string>
+    <string name="parking_3rd_Lvl">Parking 3rd Lvl</string>
+    <string name="parking_4th_Lvl">Parking 4th Lvl</string>
     <string name="date_from">date_from</string>
     <string name="date_to">date_to</string>
     <string name="error_input_name">Invalid string</string>
