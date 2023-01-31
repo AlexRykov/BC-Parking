@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.bc_parking.presentation.WelcomeFragment"
+        android:label="WelcomeFragment" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_outsideParkingFragment"
+            app:destination="@id/outsideParkingFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_XFragment"
+            app:destination="@id/XFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/outsideParkingFragment"
+        android:name="com.example.bc_parking.presentation.OutsideParkingFragment"
+        android:label="OutsideParkingFragment" />
+    <activity
+        android:id="@+id/XFragment"
+        android:name="com.example.bc_parking.presentation.XFragment"
+        android:label="XFragment" />
+</navigation>

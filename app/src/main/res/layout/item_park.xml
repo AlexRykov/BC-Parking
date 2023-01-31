@@ -28,7 +28,7 @@
                 android:id="@+id/tvCount"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:text="@string/count"
+                android:text="@string/count1"
                 android:textSize="20sp" />
 
             <TextView
